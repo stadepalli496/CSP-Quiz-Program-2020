@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>Pop Quiz</title>
+    <script>
+      var score = 0;
+      var questionCount = 0;
+      function gradeQuiz()
+      {
+        var answer = document.getElementById("answer").value;
+        if(questionCount == 0)
+        {
+          if(answer == 7)
+          {
+            score = score + 1;
+          }
+          document.getElementById("question").innerHTML = "How many millions are in 1 billion?"
+        }
+        if(questionCount == 1)
+        {
+          if(answer == 1000)
+          {
+            score = score + 1;
+          }
+            document.getElementById("question").innerHTML = "How many planets are in our solar system?"
+        }
+        if(questionCount == 2)
+        {
+          if(answer == 8)
+          {
+            score = score + 1;
+          }
+            end();
+        }
+        questionCount = questionCount + 1;
+      }
+      function end()
+      {
+          document.getElementById("question").style.visibility = "hidden";
+          document.getElementById("button").style.visibility = "hidden";
+          document.getElementById("answer").style.visibility = "hidden";
+          document.getElementById("score_reveal").innerHTML = "Your score is " + score + "/3!";
+          document.getElementById("reveal").innerHTML = "Answers:";
+          document.getElementById("answer1").innerHTML = "How many colors are in the rainbow? 7";
+          document.getElementById("answer2").innerHTML = "How many millions are in a billion? 1000";
+          document.getElementById("answer3").innerHTML = "How many planets are in our solar system? 8";
+      }
+    </script>
+    <style>
+    body{
+      text-align: center;
+      background-color: lightgray;
+      font-family: cursive;
+    }
+    h2{
+      color: blue;
+      font-size: 40px;
+    }
+    span{
+      font-size: 25px;
+    }
+    #button, #answer {
+      font-size: 25px;
+      font-family: cursive;
+    }
+    #button {
+      background-color: #f44336;
+      color: white;
+    }
+    #answer {
+      background-color: black;
+      color: white;
+    }
+    </style>
+  </head>
+
+  <body>
+    <h2>Pop Quiz!</h2>
+    <span id = "question">How many colors are in the rainbow?</span>
+    <input type = "text" id = "answer">
+    <input id = "button" type = "button" value = "Submit Answer" onclick = "gradeQuiz()">
+      <br>
+      <span id = "score_reveal"></span>
+      <br>
+      <span id = "reveal"></span>
+      <br>
+      <span id = "answer1"></span>
+      <br>
+      <span id = "answer2"></span>
+      <br>
+      <span id = "answer3"></span>
+      <br>
+  </body>
+</html>
